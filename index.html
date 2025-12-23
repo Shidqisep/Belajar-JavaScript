@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript dan Tailwind</title>
+    <link href="src/output.css" rel="stylesheet">
+</head>
+<body class="bg-blue-100">
+    <h1 id="judul" class="text-3xl text-blue-900 font-bold self-auto text-center">Belajar Javascript</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-gray-300 m-2 p-2 rounded-lg">
+        <div class="bg-gray-400 m-2 col-span-2 rounded-xl shadow-lg p-6 text-right">
+            <h2 class="text-xl font-bold mb-1.5 text-left" >Belajar Document Object Manipulation (DOM)</h2>
+            <p id="penjelasan" class="text-left">Javascript bisa memanipulasi document html secara langsung!, mengubah element html apapun. Coba klik tombol disana</p>
+            <button id="btn-ubah-judul" 
+            class="bg-auto bg-red-600 px-10 py-1 mt-4 rounded-lg text-white
+            hover:cursor-pointer hover:bg-amber-900 focus:outline-none focus:ring-red-400 text-right">
+                Click me
+            </button>
+            
+        </div>
+        <div class="bg-pink-300 m-2 col-span-1 rounded-xl shadow-lg p-6 text-right">
+            <h2 class="text-xl font-bold mb-1.5 text-left" >Belajar Javascript popup</h2>
+            <p class="text-left">Di dalam Javascript ada beberapa pop up yang bisa digunakan</p>
+            <button id="btn-prompt"
+            class="bg-auto bg-red-600 px-3 py-1 mt-4 rounded-lg text-white
+            hover:cursor-pointer hover:bg-amber-900 focus:outline-none focus:ring-red-400 text-right">
+                Prompt
+            </button>
+             <button id="btn-alert" 
+            class="bg-auto bg-red-600 px-10 py-1 mt-4 rounded-lg text-white
+            hover:cursor-pointer hover:bg-amber-900 focus:outline-none focus:ring-red-400 text-right">
+                Alert
+            </button>
+             <button id="btn-confirm" 
+            class="bg-auto bg-red-600 px-10 py-1 mt-4 rounded-lg text-white
+            hover:cursor-pointer hover:bg-amber-900 focus:outline-none focus:ring-red-400 text-right">
+                Confirm
+            </button>
+        </div>
+        <div class="bg-lime-300 m-2 col-span-1 rounded-xl shadow-lg p-6 text-right">
+            <h2 class="text-xl font-bold mb-1.5 text-left" >Belajar Javascript</h2>
+            <p class="text-left">Belajar js dengan serius</p>
+            <button onclick="alert('Hello')" 
+            class="bg-auto bg-red-600 px-3 py-1 mt-4 rounded-lg text-white
+            hover:cursor-pointer hover:bg-amber-900 focus:outline-none focus:ring-red-400 text-right">
+                Click me
+            </button>
+        </div>
+         <div class="bg-sky-400 m-2 col-span-1 rounded-xl shadow-lg p-6 text-right">
+            <h2 class="text-xl font-bold mb-1.5 text-left" >Belajar Javascript</h2>
+            <p class="text-left">Belajar js dengan serius</p>
+            <button onclick="alert('Hello')" 
+            class="bg-auto bg-red-600 px-3 py-1 mt-4 rounded-lg text-white
+            hover:cursor-pointer hover:bg-amber-900 focus:outline-none focus:ring-red-400 text-right">
+                Click me
+            </button>
+        </div>
+         <div class="bg-amber-400 m-2 col-span-1 rounded-xl shadow-lg p-6 text-right">
+            <h2 class="text-xl font-bold mb-1.5 text-left" >Belajar Javascript</h2>
+            <p class="text-left">Belajar js dengan serius</p>
+            <button onclick="alert('Hello')" 
+            class="bg-auto bg-red-600 px-3 py-1 mt-4 rounded-lg text-white
+            hover:cursor-pointer hover:bg-amber-900 focus:outline-none focus:ring-red-400 text-right">
+                Click me
+            </button>
+        </div>
+      
+       
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
