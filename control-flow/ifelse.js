@@ -5,3 +5,5 @@ if (angka % 2 === 0) {
 } else {
     console.log("Angka ganjil")
 }
+
+//nested for loop
