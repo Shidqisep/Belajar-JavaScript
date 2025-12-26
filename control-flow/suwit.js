@@ -11,3 +11,14 @@ playerChooseContainer.addEventListener('click', (playerChoose) => {
     console.log("user memilih " + userChoice)
     // playSuwit(buttonChoose)
 })
+
+const btnKembali = document.getElementById('btn-kembali')
+
+function routing(route){
+    return window.location.href = route
+}
+
+btnKembali.addEventListener('click', () => {
+    console.log('terpanggil')
+    routing("/")
+})

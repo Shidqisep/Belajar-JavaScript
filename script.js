@@ -67,6 +67,10 @@ function cekMakananEnak(makanan){
     }
 }
 
+function routing(route){
+    return window.location.href = route
+}
+
 
 btnPrompt.addEventListener('click', tampilkanPrompt)
 btnAlert.addEventListener('click', tampilkanAlert)
@@ -80,3 +84,9 @@ btnMakanan.addEventListener('click', function(){
     const makanan = getInput("Masukkan Nama Makanan")
     cekMakananEnak(makanan) 
 })
+
+btnSuit.addEventListener('click', () => {
+    routing("control-flow/suwit.html")
+})
+
+
