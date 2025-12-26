@@ -11,18 +11,17 @@
 //     console.log('ini for ke-' + i)
 // }
 
-//bintang siku siku
-let string = ' '
-for (let i = 0; i < 5; i++) {
+//bintang sama kaki
+// let string = ' '
+// for (let i = 0; i < 5; i++) {
 
-    for(let p = 0; p < 5 - i; p++){
-        string += ' '
-    }
-    for (let o = 0; o <= 2 * i - 1; o++) {
-        string += '*'
+//     for(let p = 0; p < 5 - i; p++){
+//         string += ' '
+//     }
+//     for (let o = 0; o < 2 * i - 1; o++) {
+//         string += '*'
         
-    }
-    string += '\n'   
-}
-console.log(string);
-
+//     }
+//     string += '\n'   
+// }
+// console.log(string);
