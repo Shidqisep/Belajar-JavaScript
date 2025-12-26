@@ -46,7 +46,7 @@ function tampilkanConfirm(){
 function cekAngkaGenap(angka){
     if (parseInt(angka) % 2 === 0) {
         return alert("Angkanya genap")
-    } else if (parseInt(angka) % 2 !== 0){
+    } else if (parseInt(angka) % 2 === 1){
          return alert("angkanya ganjil bos")
     } else {
          return alert("Kamu tidak memasukkan angka")
