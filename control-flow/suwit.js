@@ -16,11 +16,18 @@ const suwitIcons = {
 
 }
 
+const resultStyle = {
+    win: `bg-green-600 text-white-100 rounded-xl p-6 mb-6 text-2xl text-center font-bold`,
+    lose: `bg-red-600 text-white-100 rounded-xl p-6 mb-6 text-2xl text-center font-bold`,
+    tied: `bg-yellow-600 text-white-100 rounded-xl p-6 mb-6 text-2xl text-center font-bold`
+}
+
 const win = document.getElementById('win');
 const lose = document.getElementById('lose');
 const tied = document.getElementById('tied');
 const userDisplay = document.getElementById('userDisplay')
 const compDisplay = document.getElementById('compDisplay')
+const resultDisplay = document.getElementById('gameResult')
 
 //tangkap pilihan player
 const playerChooseContainer = document.getElementById('choices')
@@ -59,42 +66,56 @@ function playSuwit(userChoice){
     }
 
     if (userChoice == compChoice) {
-        alert("Lu seri coy")
+        // alert("Lu seri coy")
         gameStats.tied = gameStats.tied + 1;
         tied.innerText = gameStats.tied
         userDisplay.innerHTML = compDisplay.innerHTML
+        resultDisplay.className = resultStyle.tied
+        resultDisplay.innerText = "Anda Seri"
     } else if(userChoice == "Paper"){
         userDisplay.innerHTML = suwitIcons.paper
         if (compChoice == "Rock") {
-            alert("anda Menang")
+            // alert("anda Menang")
             gameStats.win = gameStats.win + 1;
             win.innerText = gameStats.win
+            resultDisplay.className = resultStyle.win
+            resultDisplay.innerText = "Anda Menang!"
         } else {
             gameStats.lose = gameStats.lose + 1;
             lose.innerText = gameStats.lose
-            alert("anda kalah")
+            resultDisplay.className = resultStyle.lose
+            resultDisplay.innerText = "Anda Kalah!"
+            // alert("anda kalah")
         }
     } else if (userChoice == "Rock") {
         userDisplay.innerHTML = suwitIcons.rock
         if (compChoice == "Scissor") {
-            alert("anda menang")
+            // alert("anda menang")
             gameStats.win = gameStats.win + 1;
             win.innerText = gameStats.win
+            resultDisplay.className = resultStyle.win
+            resultDisplay.innerText = "Anda Menang!"
         } else {
-             gameStats.lose = gameStats.lose + 1;
+            gameStats.lose = gameStats.lose + 1;
             lose.innerText = gameStats.lose
-            alert("Anda kalah")
+            resultDisplay.className = resultStyle.lose
+            resultDisplay.innerText = "Anda Kalah!"
+            // alert("Anda kalah")
         }
     } else if (userChoice == "Scissor") {
         userDisplay.innerHTML = suwitIcons.scissor
         if (compChoice == "Paper") {
             gameStats.win = gameStats.win + 1;
             win.innerText = gameStats.win
-            alert("anda menang")
+            resultDisplay.className = resultStyle.win
+            resultDisplay.innerText = "Anda Menang!"
+            // alert("anda menang")
         }else{
              gameStats.lose = gameStats.lose + 1;
             lose.innerText = gameStats.lose
-            alert("anda kalah")
+            resultDisplay.className = resultStyle.lose
+            resultDisplay.innerText = "Anda Kalah!"
+            // alert("anda kalah")
         }
     }
 }
