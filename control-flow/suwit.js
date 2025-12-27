@@ -1,3 +1,14 @@
+//persiapan object 
+const gameStats = {
+    win: 0,
+    lose: 0,
+    tied: 0
+}
+
+const win = document.getElementById('win');
+const lose = document.getElementById('lose');
+const tied = document.getElementById('tied');
+
 //tangkap pilihan player
 const playerChooseContainer = document.getElementById('choices')
 
@@ -33,22 +44,36 @@ function playSuwit(userChoice){
 
     if (userChoice == compChoice) {
         alert("Lu seri coy")
+        gameStats.tied = gameStats.tied + 1;
+        tied.innerText = gameStats.tied
     } else if(userChoice == "Paper"){
         if (compChoice == "Rock") {
             alert("anda Menang")
+            gameStats.win = gameStats.win + 1;
+            win.innerText = gameStats.win
         } else {
+            gameStats.lose = gameStats.lose + 1;
+            lose.innerText = gameStats.lose
             alert("anda kalah")
         }
     } else if (userChoice == "Rock") {
         if (compChoice == "Scissor") {
             alert("anda menang")
+            gameStats.win = gameStats.win + 1;
+            win.innerText = gameStats.win
         } else {
+             gameStats.lose = gameStats.lose + 1;
+            lose.innerText = gameStats.lose
             alert("Anda kalah")
         }
     } else if (userChoice == "Scissor") {
         if (compChoice == "Paper") {
+            gameStats.win = gameStats.win + 1;
+            win.innerText = gameStats.win
             alert("anda menang")
         }else{
+             gameStats.lose = gameStats.lose + 1;
+            lose.innerText = gameStats.lose
             alert("anda kalah")
         }
     }
