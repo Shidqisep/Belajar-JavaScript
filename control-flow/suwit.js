@@ -28,6 +28,7 @@ const tied = document.getElementById('tied');
 const userDisplay = document.getElementById('userDisplay')
 const compDisplay = document.getElementById('compDisplay')
 const resultDisplay = document.getElementById('gameResult')
+const reloadBtn = document.getElementById('reload-btn')
 
 //tangkap pilihan player
 const playerChooseContainer = document.getElementById('choices')
@@ -129,4 +130,8 @@ function routing(route){
 btnKembali.addEventListener('click', () => {
     console.log('terpanggil')
     routing("/")
+})
+
+reloadBtn.addEventListener('click', () => {
+    location.reload();
 })
