@@ -17,9 +17,9 @@ const suwitIcons = {
 }
 
 const resultStyle = {
-    win: `bg-green-600 text-white-100 rounded-xl p-6 mb-6 text-2xl text-center font-bold`,
-    lose: `bg-red-600 text-white-100 rounded-xl p-6 mb-6 text-2xl text-center font-bold`,
-    tied: `bg-yellow-600 text-white-100 rounded-xl p-6 mb-6 text-2xl text-center font-bold`
+    win: `bg-green-600 text-white rounded-xl p-6 mb-6 text-2xl text-center font-bold`,
+    lose: `bg-red-600 text-white rounded-xl p-6 mb-6 text-2xl text-center font-bold`,
+    tied: `bg-yellow-600 text-white rounded-xl p-6 mb-6 text-2xl text-center font-bold`
 }
 
 const win = document.getElementById('win');
@@ -47,7 +47,8 @@ playerChooseContainer.addEventListener('click', (playerChoose) => {
 function playSuwit(userChoice){
     let angkaAcak = Math.round(Math.random() * 2 + 1)
 // console.log(angkaAcak)
-    let compChoice
+    let compChoice;
+    let status;
 
     switch (angkaAcak) {
         case 1:
@@ -67,57 +68,64 @@ function playSuwit(userChoice){
     }
 
     if (userChoice == compChoice) {
-        // alert("Lu seri coy")
-        gameStats.tied = gameStats.tied + 1;
-        tied.innerText = gameStats.tied
-        userDisplay.innerHTML = compDisplay.innerHTML
-        resultDisplay.className = resultStyle.tied
-        resultDisplay.innerText = "Anda Seri"
+       status = 'tied'
     } else if(userChoice == "Paper"){
         userDisplay.innerHTML = suwitIcons.paper
         if (compChoice == "Rock") {
-            // alert("anda Menang")
-            gameStats.win = gameStats.win + 1;
-            win.innerText = gameStats.win
-            resultDisplay.className = resultStyle.win
-            resultDisplay.innerText = "Anda Menang!"
+           status = 'win'
         } else {
-            gameStats.lose = gameStats.lose + 1;
-            lose.innerText = gameStats.lose
-            resultDisplay.className = resultStyle.lose
-            resultDisplay.innerText = "Anda Kalah!"
+           status = 'tied'
             // alert("anda kalah")
         }
     } else if (userChoice == "Rock") {
         userDisplay.innerHTML = suwitIcons.rock
         if (compChoice == "Scissor") {
             // alert("anda menang")
-            gameStats.win = gameStats.win + 1;
-            win.innerText = gameStats.win
-            resultDisplay.className = resultStyle.win
-            resultDisplay.innerText = "Anda Menang!"
+           status = 'win'
         } else {
-            gameStats.lose = gameStats.lose + 1;
-            lose.innerText = gameStats.lose
-            resultDisplay.className = resultStyle.lose
-            resultDisplay.innerText = "Anda Kalah!"
+          status = 'lose'
             // alert("Anda kalah")
         }
     } else if (userChoice == "Scissor") {
         userDisplay.innerHTML = suwitIcons.scissor
         if (compChoice == "Paper") {
+            status = 'win'
+        }else{
+            status = 'lose'
+            // alert("anda kalah")
+        }
+    }
+    applyDisplay(status);
+}
+
+function applyDisplay(status){
+    if (!status) {
+        return
+    }
+    switch (status) {
+        case "win":
             gameStats.win = gameStats.win + 1;
             win.innerText = gameStats.win
             resultDisplay.className = resultStyle.win
             resultDisplay.innerText = "Anda Menang!"
-            // alert("anda menang")
-        }else{
-             gameStats.lose = gameStats.lose + 1;
+            break;
+
+        case "lose":
+            gameStats.lose = gameStats.lose + 1;
             lose.innerText = gameStats.lose
             resultDisplay.className = resultStyle.lose
             resultDisplay.innerText = "Anda Kalah!"
-            // alert("anda kalah")
-        }
+            break;
+        
+        case "tied":
+            gameStats.tied = gameStats.tied + 1;
+            tied.innerText = gameStats.tied
+            userDisplay.innerHTML = compDisplay.innerHTML
+            resultDisplay.className = resultStyle.tied
+            resultDisplay.innerText = "Anda Seri"
+            break;
+        default:
+            break;
     }
 }
 
